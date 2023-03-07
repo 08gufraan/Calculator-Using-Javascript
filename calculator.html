@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calculator app</title>
+	<script type="text/javascript">
+		var display_value="";
+		var buttons=document.getElementsByTagName('button');
+		var item;
+		addEventListener("click", function move(event)
+{
+			buttontext=event.target.innerText;
+		if (buttontext=="X")
+	{
+			buttontext= '*';
+			display_value+=buttontext;
+			document.getElementById('display').value+=buttontext;
+	} 
+		else if(buttontext=="=")
+	{
+             document.getElementById('display').value=eval(display_value);
+             display_value=document.getElementById('display').value;
+	}
+		else if(buttontext=="C")
+	{
+			document.getElementById('display').value="";
+			display_value="";
+	}
+		else if (buttontext=="sine")
+	{
+			buttontext= 'sin';
+			display_value+=Math.sin();
+			document.getElementById('display').value+=buttontext;
+	}
+		else
+	{
+			document.getElementById('display').value+=buttontext;
+			display_value+=buttontext;
+	}
+}
+			);
+
+	</script>
+</head>
+<body>
+	<div id="container">
+		<h1>calculator</h1>
+		<input type="text" name="display" id="display">	<br>
+					<button>
+						1
+					</button>
+					<button>
+						2
+					</button>
+					<button>
+						3
+					</button>
+					<button class="sign">
+						+
+					</button>
+					<button>
+			            4
+					</button>
+					<button>
+						5
+					</button>
+					<button>
+						6
+					</button>
+					<button class="sign">
+						-
+					</button>
+					<button>
+						7
+					</button>
+					<button>
+						8
+					</button>
+					<button>
+						9
+					</button>
+					<button class="sign">
+						/
+					</button>
+					<button class="sign">
+						C
+					</button>
+					<button>
+						0
+					</button>
+					<button class="sign">
+						X
+					</button>
+					<button class="sign">
+						=
+					</button>
+	</div>
+</body>
+</html>
+<style type="text/css">
+	html{
+		background-color: steelblue;
+	}
+	.sign{
+		color:yellow;
+	}
+	#container{
+		border-radius: 20px;
+		color: white;
+		background-color: black;
+		border: 2px solid white;
+		width: 50%;
+		margin: auto;
+		text-align: center;
+	}
+    button{
+    	color: white;
+    	background-color: #665353;
+    	border-radius: 40%;
+ 	    margin-top: 20px;
+ 	    font-size: 30px;
+ 	    width: 24%;
+	}
+	input{
+		box-shadow: 2px 2px steelblue;
+		color: white;
+		background-color: black;
+		font-size: 30px;
+		border-radius: 30px;
+		height: 50px;
+		width: 300px;
+	}
+	button:hover{
+		cursor: pointer;
+		background-color: grey;
+	}
+</style>
